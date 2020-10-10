@@ -28,8 +28,10 @@ export default {
     onValueChanged(event) {
       console.log("onvaluechanged");
       const newValue = event.target.value;
-      this.emitValueChange(newValue);
-      this.disableEditMode();
+      if (newValue.trim().length) {
+        this.emitValueChange(newValue);
+        this.disableEditMode();
+      }
     },
 
     enableEditMode(event) {
@@ -66,14 +68,19 @@ input,
 span {
   box-sizing: border-box;
   display: block;
-  width: 100%;
-  padding: 8px 6px;
+  padding: 2px 6px;
 
+  overflow: hidden;
   color: inherit;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   border: none;
   text-align: center;
   cursor: text;
+}
+
+span {
+  margin: 0 6px;
+  padding: 2px 0;
 }
 </style>

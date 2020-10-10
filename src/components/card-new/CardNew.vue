@@ -36,14 +36,16 @@ export default {
 
 .card {
   position: relative;
-  width: 250px;
+  width: 350px;
   height: 150px;
+  padding: 8px;
+  margin: 16px;
 
-  border: 1px solid hsl(0, 0%, 50%);
+  overflow: hidden;
+  border: 1px solid hsl(0, 0%, 80%);
   background-color: hsl(0, 0%, 95%);
   border-radius: 6px;
   cursor: pointer;
-  overflow: hidden;
   transition: 200ms;
 }
 
@@ -71,10 +73,6 @@ export default {
   color: hsl(1, 0%, 50%);
   transform: translateX(-50%) translateY(-50%);
   transition: inherit;
-}
-
-.card:hover {
-  border: 1px solid hsl(0, 0%, 50%);
 }
 
 .card:hover > .icon {
