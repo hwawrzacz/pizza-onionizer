@@ -1,13 +1,16 @@
 <template>
   <div id="app" class="fx-row fx-wrap fx-h-c">
     <ul class="fx-row fx-wrap fx-h-center">
-      <li v-for="card in cards" :key="cards.indexOf(card)">
+      <li v-for="id in cardsIds" :key="id">
         <CardDetails v-on:add-card="addNewCard" />
       </li>
       <li class="fx-row fx-h-center fx-v-center">
         <CardNew v-on:add-card="addNewCard" />
       </li>
     </ul>
+    <button class="button--new-card fx-row fx-v-center" @click="addNewCard">
+      <i class="material-icons">add</i>Add new card
+    </button>
   </div>
 </template>
 
@@ -24,14 +27,15 @@ export default {
 
   data: function () {
     return {
-      cards: [],
+      id: 0,
+      cardsIds: [],
     };
   },
 
   methods: {
     addNewCard: function () {
       console.log("new-card");
-      this.cards.push(CardDetails);
+      this.cardsIds.push(this.id++);
     },
   },
 };
@@ -55,6 +59,26 @@ export default {
 ul {
   list-style: none;
   margin: 0 auto;
+}
+
+.button--new-card {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  padding: 8px 16px;
+
+  transform: translateX(-50%);
+  border-radius: 50px;
+  color: inherit;
+  border: none;
+  font-size: 1.1em;
+  background-color: hsl(210, 29%, 24%);
+  color: hsl(0, 0%, 95%);
+
+  box-shadow: 0 4px 10px -4px #666;
+}
+.button--new-card > i {
+  margin-right: 8px;
 }
 
 /* Common */
