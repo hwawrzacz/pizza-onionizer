@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <button class="close"><i>close</i></button>
+    <button class="close"><i class="material-icons">close</i></button>
     <EditableLabel
       :type="'text'"
       :placeholder="'e.g. Margherita'"
@@ -19,7 +19,7 @@
             @valueChange="setPrice"
           />
 
-          <i>monetization_on</i>
+          <i class="material-icons">monetization_on</i>
         </div>
       </div>
 
@@ -40,7 +40,8 @@
     <div class="ratio-wrapper fx-col fx-h-center fx-wrap">
       <label for="ratio">Ratio</label>
       <span name="ratio"
-        ><strong>{{ getRatio() }}</strong> <i>monetization_on</i> per
+        ><strong>{{ getRatio() }}</strong>
+        <i class="material-icons">monetization_on</i> per
         <strong>[u<sup>2</sup>]</strong></span
       >
     </div>
