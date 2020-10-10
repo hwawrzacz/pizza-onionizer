@@ -4,24 +4,30 @@
       <li v-for="id in cardsIds" :key="id">
         <CardDetails :idCard="id" @deleteCard="deleteCard" />
       </li>
-      <li class="fx-row fx-h-center fx-v-center">
-        <CardNew v-on:add-card="addNewCard" />
-      </li>
     </ul>
-    <button class="button--new-card fx-row fx-v-center" @click="addNewCard">
+    <section class="caption--no-cards" v-if="!cardsIds.length">
+      <h1>No cards added</h1>
+      <p>
+        Add new cards to compare your potential pizza's
+        surface-area-to-price-ratio
+      </p>
+    </section>
+    <button
+      class="button--new-card fx-row fx-v-center"
+      :class="{ up: !cardsIds.length }"
+      @click="addNewCard"
+    >
       <i class="material-icons">add</i>Add new card
     </button>
   </div>
 </template>
 
 <script>
-import CardNew from "./components/card-new/CardNew.vue";
 import CardDetails from "./components/card-details/CardDetails.vue";
 
 export default {
   name: "App",
   components: {
-    CardNew,
     CardDetails,
   },
 
@@ -77,11 +83,29 @@ ul {
   background-color: hsl(210, 29%, 24%);
   color: hsl(0, 0%, 95%);
   cursor: pointer;
+  transition: 300ms;
 
   box-shadow: 0 4px 10px -4px #666;
 }
+
 .button--new-card > i {
   margin-right: 8px;
+}
+
+.button--new-card.up {
+  bottom: 40%;
+}
+
+.caption--no-cards {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.caption--no-cards > h1 {
+  margin-bottom: 16px;
 }
 
 /* Common */
