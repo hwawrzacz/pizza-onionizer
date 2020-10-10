@@ -1,6 +1,8 @@
 <template>
   <div class="card">
-    <button class="close"><i class="material-icons">close</i></button>
+    <button class="close" @click="emitDeleteCard">
+      <i class="material-icons">close</i>
+    </button>
     <section>
       <EditableLabel
         :type="'text'"
@@ -55,6 +57,7 @@
 import EditableLabel from "../label-editable/EditableLabel.vue";
 export default {
   name: "CardDetails",
+  props: ["idCard"],
   components: {
     EditableLabel,
   },
@@ -86,6 +89,10 @@ export default {
     getRatio() {
       const ratio = (Math.PI * Math.pow(this.diameter / 2, 2)) / this.price;
       return ratio ? ratio.toFixed(2) : "---";
+    },
+
+    emitDeleteCard() {
+      this.$emit("deleteCard", this.idCard);
     },
   },
 };

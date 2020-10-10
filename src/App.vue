@@ -2,7 +2,7 @@
   <div id="app" class="fx-row fx-wrap fx-h-c">
     <ul class="fx-row fx-wrap fx-h-center">
       <li v-for="id in cardsIds" :key="id">
-        <CardDetails v-on:add-card="addNewCard" />
+        <CardDetails :idCard="id" @deleteCard="deleteCard" />
       </li>
       <li class="fx-row fx-h-center fx-v-center">
         <CardNew v-on:add-card="addNewCard" />
@@ -28,14 +28,17 @@ export default {
   data: function () {
     return {
       id: 0,
-      cardsIds: [],
+      cardsIds: [0],
     };
   },
 
   methods: {
     addNewCard: function () {
       console.log("new-card");
-      this.cardsIds.push(this.id++);
+      this.cardsIds.push(++this.id);
+    },
+    deleteCard: function (id) {
+      this.cardsIds.splice(this.cardsIds.indexOf(id), 1);
     },
   },
 };
