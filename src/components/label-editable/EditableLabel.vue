@@ -3,12 +3,11 @@
     <label for="price">{{ label }}</label>
     <input
       :class="{ disabled: !editMode }"
-      :type="type"
       :placeholder="placeholder"
       :value="value"
       @focusout="onValueChanged"
     />
-    <span :class="{ disabled: editMode }" @dblclick="enableEditMode">{{
+    <span :class="{ disabled: editMode }" @click="enableEditMode">{{
       value
     }}</span>
   </div>
@@ -17,7 +16,7 @@
 <script>
 export default {
   name: "EditableLabel",
-  props: ["type", "value", "placeholder", "label"],
+  props: ["value", "placeholder", "label"],
 
   data: function () {
     return {
@@ -28,7 +27,8 @@ export default {
   methods: {
     onValueChanged(event) {
       console.log("onvaluechanged");
-      this.emitValueChange(event.target.value);
+      const newValue = event.target.value;
+      this.emitValueChange(newValue);
       this.disableEditMode();
     },
 
@@ -59,6 +59,7 @@ export default {
   padding: 0;
   max-height: 0;
   opacity: 0;
+  border: none;
 }
 
 input,
@@ -68,14 +69,11 @@ span {
   width: 100%;
   padding: 8px 6px;
 
+  color: inherit;
+  font-size: 2em;
+  font-weight: bold;
+  border: none;
   text-align: center;
-  font-size: 1em;
-}
-
-/* Disable number input arrows */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  cursor: text;
 }
 </style>

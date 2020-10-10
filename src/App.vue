@@ -48,9 +48,22 @@ export default {
   color: #2c3e50;
 }
 
+.fx-wrap {
+  flex-wrap: wrap;
+}
+
+.fx-no-wrap {
+  flex-wrap: no-wrap;
+}
+
 .fx-row {
   display: flex;
   flex-direction: row;
+}
+
+.fx-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .fx-h-center {
