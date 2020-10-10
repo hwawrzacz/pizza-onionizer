@@ -96,6 +96,7 @@ export default {
   position: relative;
   padding: 8px;
   margin: 16px;
+  height: 250px;
 
   overflow: hidden;
   border: 1px solid hsl(0, 0%, 80%);
@@ -103,6 +104,33 @@ export default {
   border-radius: 6px;
   cursor: initial;
   transition: 200ms;
+
+  /* For animating purposes */
+  width: 0;
+  transform: scale(0.5);
+  opacity: 0;
+
+  animation: show;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  0% {
+    width: 0px;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    width: 350px;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    width: 350px;
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .close {
