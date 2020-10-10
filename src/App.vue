@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-    <ul class="fx-row row-wrap fx-h-start">
-      <li
-        v-for="card in cards"
-        :key="cards.indexOf(card)"
-        class="fx-row fx-h-center fx-v-stretch"
-      >
+  <div id="app" class="fx-row fx-wrap fx-h-c">
+    <ul class="fx-row fx-wrap fx-h-center">
+      <li v-for="card in cards" :key="cards.indexOf(card)">
         <CardDetails v-on:add-card="addNewCard" />
       </li>
-      <li><CardNew v-on:add-card="addNewCard" /></li>
+      <li class="fx-row fx-h-center fx-v-center">
+        <CardNew v-on:add-card="addNewCard" />
+      </li>
     </ul>
   </div>
 </template>
@@ -66,14 +64,6 @@ input::placeholder {
 }
 
 /* Flex */
-.fx-wrap {
-  flex-wrap: wrap;
-}
-
-.fx-no-wrap {
-  flex-wrap: nowrap;
-}
-
 .fx-row {
   display: flex;
   flex-direction: row;
@@ -82,6 +72,14 @@ input::placeholder {
 .fx-col {
   display: flex;
   flex-direction: column;
+}
+
+.fx-wrap {
+  flex-wrap: wrap;
+}
+
+.fx-no-wrap {
+  flex-wrap: nowrap;
 }
 
 .fx-h-center {

@@ -61,7 +61,7 @@ export default {
 
   data: function () {
     return {
-      label: "asd",
+      label: "",
       price: null,
       diameter: null,
     };
@@ -118,16 +118,19 @@ export default {
 @keyframes show {
   0% {
     width: 0px;
+    height: 0px;
     transform: scale(0.5);
     opacity: 0;
   }
   50% {
     width: 350px;
+    height: 250px;
     transform: scale(0.5);
     opacity: 0;
   }
   100% {
     width: 350px;
+    height: 250px;
     transform: scale(1);
     opacity: 1;
   }
