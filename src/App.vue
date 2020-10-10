@@ -33,11 +33,11 @@ export default {
   },
 
   methods: {
-    addNewCard: function () {
+    addNewCard() {
       console.log("new-card");
       this.cardsIds.push(++this.id);
     },
-    deleteCard: function (id) {
+    deleteCard(id) {
       this.cardsIds.splice(this.cardsIds.indexOf(id), 1);
     },
   },
@@ -77,6 +77,7 @@ ul {
   font-size: 1.1em;
   background-color: hsl(210, 29%, 24%);
   color: hsl(0, 0%, 95%);
+  cursor: pointer;
 
   box-shadow: 0 4px 10px -4px #666;
 }

@@ -21,7 +21,7 @@
 export default {
   name: "CardNew",
   methods: {
-    sendNewCardRequest: function () {
+    sendNewCardRequest() {
       this.$emit("add-card");
     },
   },

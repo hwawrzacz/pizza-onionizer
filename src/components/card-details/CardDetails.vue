@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <button class="close" @click="emitDeleteCard">
+  <div class="card" :class="{ 'animate-close': close }">
+    <button class="close" @click="onDeleteCard">
       <i class="material-icons">close</i>
     </button>
     <section>
@@ -67,21 +67,22 @@ export default {
       label: "",
       price: null,
       diameter: null,
+      close: false,
     };
   },
 
   methods: {
-    setLabel: function (value) {
+    setLabel(value) {
       this.label = value;
       console.log(`label: ${value}`);
     },
 
-    setPrice: function (value) {
+    setPrice(value) {
       this.price = value;
       console.log(`price: ${value}`);
     },
 
-    setDiameter: function (value) {
+    setDiameter(value) {
       this.diameter = value;
       console.log(`diameter: ${value}`);
     },
@@ -91,7 +92,13 @@ export default {
       return ratio ? ratio.toFixed(2) : "---";
     },
 
+    onDeleteCard() {
+      this.close = true;
+      setTimeout(this.emitDeleteCard, 300);
+    },
+
     emitDeleteCard() {
+      console.log("delete");
       this.$emit("deleteCard", this.idCard);
     },
   },
@@ -140,6 +147,36 @@ export default {
     height: 250px;
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+.animate-close {
+  animation: close;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes close {
+  0% {
+    width: 350px;
+    height: 250px;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    width: 350px;
+    height: 250px;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transform: scale(0.5);
+    opacity: 0;
   }
 }
 
