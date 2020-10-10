@@ -1,5 +1,5 @@
 <template>
-  <div class="card card--add" @click="sendNewCardRequest">
+  <div class="card" @click="sendNewCardRequest">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-s ::selection {
+::selection {
   color: inherit;
   background-color: inherit;
 }
