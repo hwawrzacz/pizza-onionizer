@@ -74,17 +74,14 @@ export default {
   methods: {
     setLabel(value) {
       this.label = value;
-      console.log(`label: ${value}`);
     },
 
     setPrice(value) {
       this.price = value;
-      console.log(`price: ${value}`);
     },
 
     setDiameter(value) {
       this.diameter = value;
-      console.log(`diameter: ${value}`);
     },
 
     getRatio() {
@@ -98,7 +95,6 @@ export default {
     },
 
     emitDeleteCard() {
-      console.log("delete");
       this.$emit("deleteCard", this.idCard);
     },
   },

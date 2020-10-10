@@ -34,7 +34,6 @@ export default {
 
   methods: {
     addNewCard() {
-      console.log("new-card");
       this.cardsIds.push(++this.id);
     },
     deleteCard(id) {

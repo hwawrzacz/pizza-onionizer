@@ -26,7 +26,6 @@ export default {
 
   methods: {
     onValueChanged(event) {
-      console.log("onvaluechanged");
       const newValue = event.target.value;
       if (newValue.trim().length) {
         this.emitValueChange(newValue);
@@ -35,13 +34,11 @@ export default {
     },
 
     enableEditMode(event) {
-      console.log("edit enabled");
       this.editMode = true;
       event.target.previousSibling.focus();
     },
 
     disableEditMode() {
-      console.log("edit disabled");
       this.editMode = false;
     },
 
