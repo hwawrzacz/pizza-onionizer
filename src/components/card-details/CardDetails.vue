@@ -110,6 +110,7 @@ export default {
   padding: 8px;
   margin: 16px;
   height: 250px;
+  max-width: 350px;
 
   overflow: hidden;
   border: 1px solid hsl(0, 0%, 80%);
@@ -136,13 +137,13 @@ export default {
     opacity: 0;
   }
   50% {
-    width: 350px;
+    width: 100%;
     height: 250px;
     transform: scale(0.5);
     opacity: 0;
   }
   100% {
-    width: 350px;
+    width: 100%;
     height: 250px;
     transform: scale(1);
     opacity: 1;

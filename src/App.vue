@@ -1,10 +1,13 @@
 <template>
   <div id="app" class="fx-row fx-wrap fx-h-c">
-    <ul class="fx-row fx-wrap fx-h-center">
-      <li v-for="id in cardsIds" :key="id">
-        <CardDetails :idCard="id" @deleteCard="deleteCard" />
-      </li>
-    </ul>
+    <section class="fx-row fx-wrap fx-h-center">
+      <CardDetails
+        v-for="id in cardsIds"
+        :key="id"
+        :idCard="id"
+        @deleteCard="deleteCard"
+      />
+    </section>
     <section class="caption--no-cards" v-if="!cardsIds.length">
       <h1>No cards added</h1>
       <p>
@@ -73,9 +76,8 @@ export default {
   color: #2c3e50;
 }
 
-ul {
-  list-style: none;
-  margin: 0 auto;
+section {
+  width: 100%;
 }
 
 .button--new-card {
