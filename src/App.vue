@@ -34,13 +34,22 @@ export default {
   data: function () {
     return {
       id: 0,
-      cardsIds: [0],
+      cardsIds: [],
     };
+  },
+
+  mounted() {
+    this.addNewCard();
+    window.addEventListener("keydown", (e) => {
+      if (e.keyCode === 73 && e.ctrlKey) {
+        this.addNewCard();
+      }
+    });
   },
 
   methods: {
     addNewCard() {
-      this.cardsIds.push(++this.id);
+      this.cardsIds.push(this.id++);
     },
     deleteCard(id) {
       this.cardsIds.splice(this.cardsIds.indexOf(id), 1);
@@ -71,7 +80,7 @@ ul {
 
 .button--new-card {
   position: fixed;
-  bottom: 16px;
+  bottom: 32px;
   left: 50%;
   padding: 8px 16px;
 

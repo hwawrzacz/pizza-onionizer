@@ -42,12 +42,15 @@
     </section>
     <section class="ratio-wrapper">
       <p>
-        You'll pay
-        <span class="fx-row fx-h-center fx-v-center"
-          ><span class="ratio">{{ getRatio() }}</span>
-          <i class="material-icons">monetization_on</i></span
-        >
-        for each <strong>cm<sup>2</sup></strong> of your pizza.
+        <span class="fx-row fx-h-center fx-v-center fx-grow-1">
+          For 1 <i class="material-icons">monetization_on</i> you can get
+        </span>
+        <span class="fx-row fx-h-center fx-v-center">
+          <span class="ratio">
+            {{ getRatio() }} <small>cm<sup>2</sup></small>
+          </span>
+        </span>
+        of your pizza.
       </p>
     </section>
   </div>
