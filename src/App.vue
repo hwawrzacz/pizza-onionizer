@@ -53,9 +53,17 @@ export default {
   methods: {
     addNewCard() {
       this.cardsIds.push(this.id++);
+      setTimeout(() => {
+        this.scrollDown();
+      }, 300);
     },
+
     deleteCard(id) {
       this.cardsIds.splice(this.cardsIds.indexOf(id), 1);
+    },
+
+    scrollDown() {
+      window.scrollBy(0, document.querySelector("#app").clientHeight);
     },
   },
 };
@@ -66,6 +74,7 @@ export default {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 #app {
@@ -78,6 +87,7 @@ export default {
 
 section {
   width: 100%;
+  margin-bottom: 72px;
 }
 
 .button--new-card {
