@@ -11,12 +11,13 @@
     <section class="caption--no-cards" v-if="!cardsIds.length">
       <h1>No cards added</h1>
       <p>
-        Add new cards to compare your potential pizza's
-        surface-area-to-price-ratio
+        Add new card to check your potential pizza's
+        <span class="no-wrap">surface-area-to-price-ratio</span>, or add more of
+        them for comparison.
       </p>
     </section>
     <button
-      class="button--new-card fx-row fx-v-center"
+      class="button--new-card fx-row fx-v-center no-wrap"
       :class="{ up: !cardsIds.length }"
       @click="addNewCard"
     >
@@ -117,9 +118,14 @@ section {
   bottom: 40%;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .caption--no-cards {
   position: absolute;
   width: 100%;
+  padding: 0 16px;
   top: 40%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
