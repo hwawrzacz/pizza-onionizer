@@ -43,7 +43,6 @@ export default {
   },
 
   mounted() {
-    this.addNewCard();
     window.addEventListener("keydown", (e) => {
       if (e.keyCode === 73 && e.ctrlKey) {
         this.addNewCard();
