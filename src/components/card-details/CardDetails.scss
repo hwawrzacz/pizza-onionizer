@@ -97,3 +97,14 @@ section {
     margin: 8px 0;
   }
 }
+
+// Tablets
+@media screen and (max-width: 768px) {
+  .card {
+    .button--close {
+      top: 8px;
+      opacity: 1;
+      transform: scale(1);  
+    }
+  }
+}
