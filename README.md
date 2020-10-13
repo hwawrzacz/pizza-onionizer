@@ -1,4 +1,4 @@
-# pizza-onionizer
+# pizza-piker
 
 ## Project setup
 ```
