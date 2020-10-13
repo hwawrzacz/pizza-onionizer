@@ -36,4 +36,4 @@ export default {
 };
 </script>
 
-<style scoped src="./EditableLabel.css" />
+<style scoped  lang="scss" src="./EditableLabel.scss" />

@@ -48,4 +48,4 @@ export default {
 };
 </script>
 
-<style scoped src="./CardDetails.css" />
+<style scoped lang="scss" src="./CardDetails.scss" />
