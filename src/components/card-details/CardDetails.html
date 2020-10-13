@@ -1,0 +1,39 @@
+<div class="card" :class="{ 'animate-close': close }">
+    <button class="close" @click="onDeleteCard">
+        <i class="material-icons">close</i>
+    </button>
+    <section>
+        <EditableLabel :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
+    </section>
+    <section class="fx-row fx-h-between fx-v-center">
+        <div class="input-wrapper fx-col fx-v-start">
+            <label for="price">Price</label>
+            <div class="fx-row fx-v-center">
+                <input name="price" type="number" placeholder="e.g. 15" v-model="price" @valueChange="setPrice" />
+                <i class="material-icons">monetization_on</i>
+            </div>
+        </div>
+
+        <div class="input-wrapper fx-col fx-v-start">
+            <label for="diameter">Diameter</label>
+            <div class="fx-row fx-v-center">
+                <input name="diameter" type="number" placeholder="e.g. 32" v-model="diameter"
+                    @valueChange="setDiameter" />
+                <span>cm</span>
+            </div>
+        </div>
+    </section>
+    <section class="ratio-wrapper">
+        <p>
+            <span class="fx-row fx-h-center fx-v-center fx-grow-1">
+                For 1 <i class="material-icons">monetization_on</i> you can get
+            </span>
+            <span class="fx-row fx-h-center fx-v-center">
+                <span class="ratio">
+                    {{ getRatio() }} <small>cm<sup>2</sup></small>
+                </span>
+            </span>
+            of your pizza.
+        </p>
+    </section>
+</div>

@@ -1,0 +1,7 @@
+<div class="editable-label-wrapper fx-col fx-h-center">
+    <label for="price">{{ label }}</label>
+    <input :class="{ disabled: !editMode }" :placeholder="placeholder" :value="value" @focusout="onValueChanged" />
+    <span :class="{ disabled: editMode }" @click="enableEditMode">{{
+      value
+    }}</span>
+</div>
