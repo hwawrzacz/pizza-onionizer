@@ -1,19 +1,19 @@
 @import '../../styles/animations';
 @import '../../styles/common';
+@import '../../styles/mixins';
 
 .card {
   position: relative;
   padding: 8px;
-  margin: 16px;
+  margin: 8px;
   height: 250px;
   max-width: 350px;
 
   overflow: hidden;
-  border: 1px solid hsl(0, 0%, 80%);
-  background-color: hsl(0, 0%, 95%);
-  border-radius: 6px;
+  background-color: $bg-color--lvl-1;
+  border-radius: $border-radius;
   cursor: initial;
-  transition: 200ms;
+  transition: $transition-short;
 
   /* For animating purposes */
   width: 0;
@@ -21,8 +21,10 @@
   opacity: 0;
 
   animation: show-card;
-  animation-duration: 300ms;
+  animation-duration: $transition-medium;
   animation-fill-mode: forwards;
+  
+  @include shadow();
 
   .button--close {
     position: absolute;
@@ -41,10 +43,16 @@
   }
 }
 
+.animation-close-card {
+  animation: close-card;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
 .button--close {
-  background-color:  hsl(0, 0%, 95%);
+  background-color: $bg-color--lvl-1;
   border: none;
-  border-radius: 6px;
+  border-radius: $border-radius;
   transition: inherit;
   cursor: pointer;
 }
@@ -66,7 +74,7 @@ section {
 
   label {
     font-size: 0.9em;
-    color: hsl(0, 0%, 60%);
+    color: $color--label
   }
 
   input {

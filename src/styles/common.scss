@@ -1,3 +1,21 @@
+@import "./variables";
+@import "./flex";
+
+/* Inputs */
+input::placeholder {
+  color: $color--placeholder;
+  font-weight: normal;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
+
+.whitespace-no-wrap {
+  white-space: nowrap;
+}
+
 /* Disable number input arrows */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
