@@ -1,9 +1,9 @@
-<div class="card" :class="{ 'animate-close': close }">
-    <button class="close" @click="onDeleteCard">
+<div class="card" :class="{ 'animation-close-card': close }">
+    <button class="button--close" @click="onDeleteCard">
         <i class="material-icons">close</i>
     </button>
     <section>
-        <EditableLabel :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
+        <editable-label :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
     </section>
     <section class="fx-row fx-h-between fx-v-center">
         <div class="input-wrapper fx-col fx-v-start">
