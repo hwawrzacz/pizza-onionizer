@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./flex";
+@import "./mixins";
 
 /* Inputs */
 input::placeholder {
@@ -9,7 +10,26 @@ input::placeholder {
 
 /* Buttons */
 button {
+  padding: 0 16px;
   cursor: pointer;
+  border: none;
+  @include flex-v-center();
+  @include flex-h-center();
+}
+
+.button {
+  &--circle {
+    width: $circle-button-height;
+    height: $circle-button-height;
+    border-radius: 100%;
+    
+    @include shadow();
+  }
+
+  &--color-primary {
+    background-color: hsl(210, 29%, 24%);
+    color: hsl(0, 0%, 95%);
+  }
 }
 
 .whitespace-no-wrap {
@@ -31,4 +51,17 @@ input::-webkit-inner-spin-button {
 .hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+@media screen and (max-width: 786px) {
+  button {
+    outline: none;
+  }
+  
+  .button {
+    &--circle {
+      width: $circle-button-height--small;
+      height: $circle-button-height--small;
+    }
+  } 
 }

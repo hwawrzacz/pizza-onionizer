@@ -20,28 +20,46 @@ section {
   }
 }
 
-.button--new-card {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  padding: 8px 16px;
+.button {
+  &--new-card {
+    position: fixed;
+    bottom: $page-margin;
+    left: 50%;
+    height: $button-height;
 
-  background-color: hsl(210, 29%, 24%);
-  border: none;
-  border-radius: 50px;
-  color: hsl(0, 0%, 95%);
-  cursor: pointer;
-  font-size: 1.1em;
-  transform: translateX(-50%);
-  transition: $transition-medium;
-  
-  @include shadow();
+    border-radius: 50px;
+    font-size: 1.1em;
+    transform: translateX(-50%);
+    transition: $transition-medium;
+    
+    @include shadow();
 
-  i {
-    margin-right: 8px;
+    i {
+      margin-right: 8px;
+    }
+
+    &.up {
+      bottom: 40%;
+    }
   }
 
-  &.up {
-    bottom: 40%;
+  &--circle {
+    position: absolute;
+    bottom: $page-margin;
+    right: $page-margin;
+  }
+}
+
+@media screen and (max-width: 768px) {  
+  .button {
+    &--new-card {
+      bottom: $page-margin--small;
+      height: $button-height--small;
+    }
+
+    &--circle {
+      bottom: $page-margin--small;
+      right: $page-margin--small;
+    }
   }
 }

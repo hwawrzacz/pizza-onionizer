@@ -1,3 +1,13 @@
 @mixin shadow() {
   box-shadow: 0 4px 10px -4px #666;
 }
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+}

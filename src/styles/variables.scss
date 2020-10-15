@@ -12,8 +12,15 @@ $text-color--primary: #f2f2f2;
 
 /* Size */
 $border-radius: 6px;
+$button-height: 50px;
+$button-height--small: 40px;
+$circle-button-height: $button-height;
+$circle-button-height--small: $button-height--small;
 $card-max-width: 350px;
 $card-height: 250px;
+
+$page-margin: 32px;
+$page-margin--small: 16px;
 
 /* Time */
 $transition-short: 200ms;

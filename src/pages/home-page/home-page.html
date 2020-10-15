@@ -10,12 +10,12 @@
     </p>
   </section>
 
-  <button class="button--new-card fx-row fx-v-center whitespace-no-wrap" @click="emitAddNewCard"
+  <button class="button--new-card button--color-primary fx-row fx-v-center whitespace-no-wrap" @click="emitAddNewCard"
     :class="{ 'up': isListEmpty}">
     <i class="material-icons">add</i>Add new card
   </button>
 
-  <button class="button--circle fx-row fx-v-center whitespace-no-wrap" @click="emitSort">
+  <button class="button button--circle button--color-primary fx-row fx-v-center" @click="emitSort">
     <i class="material-icons">sort</i>
   </button>
 </div>
