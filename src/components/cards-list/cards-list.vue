@@ -60,7 +60,8 @@ export default {
     },
 
     deleteCard(id) {
-      this.cards.splice(this.cards.indexOf(id), 1);
+      const cardToDelete = this.cards.find(card => card.id == id);
+      this.cards.splice(this.cards.indexOf(cardToDelete), 1);
 
       if (this.cards.length === 0) {
         this.$emit('last-card-deleted');
