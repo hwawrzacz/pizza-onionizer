@@ -35,6 +35,10 @@ export default {
 
     EventBus.$on(EventBusEvent.SORT_CARDS, () => {
       this.sort();
+
+      setTimeout(() => {
+        this.scrollTop();
+      }, 300);
     });
   },
 
@@ -71,11 +75,15 @@ export default {
     },
 
     sort() {
-      this.cards = this.cards.sort((c1, c2) => Number(c2.ratio) || 0 - Number(c1.ratio) || 0);
+      this.cards = this.cards.sort((c1, c2) => (Number(c2.ratio) || 0) - (Number(c1.ratio) || 0));
+    },
+
+    scrollTop() {
+      window.scrollTo(0, 0);
     },
 
     scrollDown() {
-      window.scrollBy(0, document.querySelector("#app").clientHeight);
+      window.scrollTo(0, document.querySelector("#app").clientHeight);
     },
 
     onPropertyChange(id, event) {
