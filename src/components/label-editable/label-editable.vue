@@ -34,7 +34,7 @@ export default {
     },
 
     emitValueChange(value) {
-      this.$emit("valueChange", value);
+      this.$emit("value-change", value);
     },
   },
 };

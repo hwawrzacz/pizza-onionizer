@@ -1,7 +1,7 @@
 <template src="./home-page.html" />
 <script>
 import CardsList from "../../components/cards-list/cards-list.vue";
-import { EventBus } from "../../mixins/EventBus.js";
+import { EventBus, EventBusEvent } from "../../mixins/EventBus.js";
 
 export default {
   name: "HomePage",
@@ -27,11 +27,11 @@ export default {
     },
 
     emitAddNewCard() {
-      EventBus.$emit('add-card');
+      EventBus.$emit(EventBusEvent.ADD_CARD);
     },
 
     emitSort() {
-      EventBus.$emit('sort');
+      EventBus.$emit(EventBusEvent.SORT_CARDS);
     }
   }
 }

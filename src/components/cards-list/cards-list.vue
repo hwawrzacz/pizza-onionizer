@@ -2,7 +2,7 @@
 
 <script>
 import PizzaCard from "../pizza-card/pizza-card.vue";
-import { EventBus } from "../../mixins/EventBus.js";
+import { EventBus, EventBusEvent } from "../../mixins/EventBus.js";
 
 export default {
   name: "CardsList",
@@ -29,11 +29,11 @@ export default {
       }
     });
     
-    EventBus.$on('add-card', () => {
+    EventBus.$on(EventBusEvent.ADD_CARD, () => {
       this.addNewCard();
     });
 
-    EventBus.$on('sort', () => {
+    EventBus.$on(EventBusEvent.SORT_CARDS, () => {
       this.sort();
     });
 
@@ -50,7 +50,7 @@ export default {
       this.cards.push(newCard);
 
       if (this.cards.length === 1) {
-        this.$emit('firstCardAdded');
+        this.$emit('first-card-added');
       }
 
       setTimeout(() => {
@@ -66,7 +66,7 @@ export default {
     deleteCard(id) {
       this.cards.splice(this.cards.indexOf(id), 1);
       if (this.cards.length === 0) {
-        this.$emit('lastCardDeleted');
+        this.$emit('last-card-deleted');
       }
     },
 

@@ -34,7 +34,7 @@ export default {
     },
 
     emitPropChange(propName, propValue) {
-      this.$emit('propertyChange', {name: propName, value: propValue});
+      this.$emit('property-change', {name: propName, value: propValue});
     },
     
     onDeleteCard() {
@@ -43,7 +43,7 @@ export default {
     },
 
     emitDeleteCard() {
-      this.$emit("deleteCard", this.idCard);
+      this.$emit("delete-card", this.idCard);
     },
   },
 

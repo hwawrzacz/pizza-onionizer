@@ -1,5 +1,5 @@
 <div>
-  <CardsList @lastCardDeleted="onLastCardDeleted" @firstCardAdded="onFirstCardAdded" :addCard="addCard" />
+  <CardsList @last-card-deleted="onLastCardDeleted" @first-card-added="onFirstCardAdded" :addCard="addCard" />
 
   <section class="caption--no-cards" :class="{'visible': isListEmpty, 'hidden': !isListEmpty}">
     <h1>No cards added</h1>
