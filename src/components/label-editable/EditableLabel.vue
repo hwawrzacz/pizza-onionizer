@@ -3,7 +3,11 @@
 <script>
 export default {
   name: "EditableLabel",
-  props: ["value", "placeholder", "label"],
+  props: {
+    value: String,
+    placeholder: String,
+    label: String,
+  },
 
   data: function () {
     return {

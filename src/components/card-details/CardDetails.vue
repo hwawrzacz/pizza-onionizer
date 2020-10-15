@@ -4,7 +4,10 @@
 import EditableLabel from "../label-editable/EditableLabel.vue";
 export default {
   name: "CardDetails",
-  props: ["idCard"],
+  props: {
+    idCard: Number
+  },
+  
   components: {
     EditableLabel,
   },
