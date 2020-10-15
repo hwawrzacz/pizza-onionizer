@@ -1,15 +1,15 @@
-<template src="./CardDetails.html"/>
+<template src="./pizza-card.html"/>
 
 <script scoped>
-import LabelEditable from "../label-editable/LabelEditable.vue";
+import LabelEditable from "../label-editable/label-editable.vue";
 export default {
-  name: "CardDetails",
+  name: "PizzaCard",
   props: {
     idCard: Number
   },
 
   components: {
-    LabelEditable,
+    LabelEditable
   },
 
   data: function () {
@@ -51,4 +51,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="./CardDetails.scss" />
+<style scoped lang="scss" src="./pizza-card.scss" />

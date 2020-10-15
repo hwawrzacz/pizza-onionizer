@@ -1,6 +1,6 @@
 <div id="app" class="fx-row fx-wrap fx-h-c">
     <section class="fx-row fx-wrap fx-h-center">
-        <CardDetails v-for="id in cardsIds" :key="id" :idCard="id" @deleteCard="deleteCard" />
+        <pizza-card v-for="id in cardsIds" :key="id" :idCard="id" @deleteCard="deleteCard" />
     </section>
     <section class="caption--no-cards" v-if="!cardsIds.length">
         <h1>No cards added</h1>

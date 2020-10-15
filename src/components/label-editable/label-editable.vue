@@ -1,4 +1,4 @@
-<template src="./LabelEditable.html" />
+<template src="./label-editable.html" />
 
 <script>
 export default {
@@ -40,4 +40,4 @@ export default {
 };
 </script>
 
-<style scoped  lang="scss" src="./LabelEditable.scss" />
+<style scoped  lang="scss" src="./label-editable.scss" />
