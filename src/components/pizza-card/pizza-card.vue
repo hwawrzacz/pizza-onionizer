@@ -4,19 +4,20 @@
 import LabelEditable from "../label-editable/label-editable.vue";
 export default {
   name: "PizzaCard",
+
   props: {
-    idCard: Number
+    idCard: Number,
+    label: String,
+    price: Number,
+    diameter: Number,
   },
 
   components: {
     LabelEditable
   },
 
-  data: function () {
+  data () {
     return {
-      label: "",
-      price: null,
-      diameter: null,
       close: false,
     };
   },
@@ -33,12 +34,7 @@ export default {
     setDiameter(value) {
       this.diameter = value;
     },
-
-    getRatio() {
-      const ratio = (Math.PI * Math.pow(this.diameter / 2, 2)) / this.price;
-      return ratio ? ratio.toFixed(2) : "---";
-    },
-
+    
     onDeleteCard() {
       this.close = true;
       setTimeout(this.emitDeleteCard, 300);
@@ -48,6 +44,13 @@ export default {
       this.$emit("deleteCard", this.idCard);
     },
   },
+
+  computed: {
+    ratio() {
+      const ratio = (Math.PI * Math.pow(this.diameter / 2, 2)) / this.price;
+      return ratio ? ratio.toFixed(2) : "---";
+    }
+  }
 };
 </script>
 

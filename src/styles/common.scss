@@ -22,3 +22,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}

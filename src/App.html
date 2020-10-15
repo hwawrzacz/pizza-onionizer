@@ -1,17 +1,3 @@
-<div id="app" class="fx-row fx-wrap fx-h-c">
-    <section class="fx-row fx-wrap fx-h-center">
-        <pizza-card v-for="id in cardsIds" :key="id" :idCard="id" @deleteCard="deleteCard" />
-    </section>
-    <section class="caption--no-cards" v-if="!cardsIds.length">
-        <h1>No cards added</h1>
-        <p>
-            Add new card to check your potential pizza's
-            <span class="whitespace-no-wrap">surface-area-to-price-ratio</span>, or add more of
-            them for comparison.
-        </p>
-    </section>
-    <button class="button--new-card fx-row fx-v-center whitespace-no-wrap" :class="{ up: !cardsIds.length }"
-        @click="addNewCard">
-        <i class="material-icons">add</i>Add new card
-    </button>
+<div id="app">
+    <HomePage />
 </div>

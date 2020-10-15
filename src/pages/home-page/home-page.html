@@ -1,0 +1,17 @@
+<div>
+  <CardsList @lastCardDeleted="onLastCardDeleted" @firstCardAdded="onFirstCardAdded" :addCard="addCard" />
+
+  <section class="caption--no-cards" :class="{'visible': isListEmpty, 'hidden': !isListEmpty}">
+    <h1>No cards added</h1>
+    <p>
+      Add new card to check your potential pizza's
+      <span class="whitespace-no-wrap">surface-area-to-price-ratio</span>, or add more of
+      them for comparison.
+    </p>
+  </section>
+
+  <button class="button--new-card fx-row fx-v-center whitespace-no-wrap" @click="addNewCard"
+    :class="{ 'up': isListEmpty}">
+    <i class="material-icons">add</i>Add new card
+  </button>
+</div>

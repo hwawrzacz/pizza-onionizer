@@ -3,7 +3,7 @@
         <i class="material-icons">close</i>
     </button>
     <section>
-        <editable-label :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
+        <LabelEditable :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
     </section>
     <section class="fx-row fx-h-between fx-v-center">
         <div class="input-wrapper fx-col fx-v-start">
@@ -30,7 +30,7 @@
             </span>
             <span class="fx-row fx-h-center fx-v-center">
                 <span class="ratio">
-                    {{ getRatio() }} <small>cm<sup>2</sup></small>
+                    {{ ratio }} <small>cm<sup>2</sup></small>
                 </span>
             </span>
             of your pizza.
