@@ -23,7 +23,7 @@ export default {
   
   mounted() {
     window.addEventListener("keydown", (e) => {
-      if (e.keyCode === 73 && e.ctrlKey) {
+      if (e.keyCode === 73 && e.ctrlKey && !e.shiftKey) {
         this.addNewCard();
       }
     });
