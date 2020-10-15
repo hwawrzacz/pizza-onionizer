@@ -1,7 +1,13 @@
-@import "../../styles/common.scss";
-
 .editable-label-wrapper {
   margin: 6px 8px;
+}
+
+.disabled {
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  border: none;
+  pointer-events: none;
 }
 
 input,
