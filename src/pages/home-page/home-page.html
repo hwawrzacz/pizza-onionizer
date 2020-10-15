@@ -1,5 +1,6 @@
 <div>
-  <CardsList @last-card-deleted="onLastCardDeleted" @first-card-added="onFirstCardAdded" :addCard="addCard" />
+  <CardsList :addCard="addCard" @last-card-deleted="onLastCardDeleted" @first-card-added="onFirstCardAdded"
+    @filter-breakpoint="setFilterVisible" />
 
   <section class="caption--no-cards" :class="{'visible': isListEmpty, 'hidden': !isListEmpty}">
     <h1>No cards added</h1>
@@ -15,7 +16,8 @@
     <i class="material-icons">add</i>Add new card
   </button>
 
-  <button class="button button--circle button--color-primary fx-row fx-v-center" @click="emitSort">
+  <button class="button button--circle button--color-primary fx-row fx-v-center" @click="emitSort"
+    :class="{'visible': isFilterVisible,'hidden': !isFilterVisible}">
     <i class="material-icons">sort</i>
   </button>
 </div>

@@ -13,7 +13,8 @@ export default {
   data: function () {
     return {
       isListEmpty: true,
-      addCard: false
+      addCard: false,
+      isFilterVisible: false
     }
   },
 
@@ -24,6 +25,10 @@ export default {
 
     onLastCardDeleted() {
       this.isListEmpty = true;
+    },
+
+    setFilterVisible(value) {
+      this.isFilterVisible = value;
     },
 
     emitAddNewCard() {

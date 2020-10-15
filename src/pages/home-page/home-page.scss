@@ -44,9 +44,10 @@ section {
   }
 
   &--circle {
-    position: absolute;
+    position: fixed;
     bottom: $page-margin;
     right: $page-margin;
+    transition: $transition-short;
   }
 }
 

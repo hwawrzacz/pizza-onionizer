@@ -36,7 +36,6 @@ export default {
     EventBus.$on(EventBusEvent.SORT_CARDS, () => {
       this.sort();
     });
-
   },
 
   methods: {
@@ -51,6 +50,8 @@ export default {
 
       if (this.cards.length === 1) {
         this.$emit('first-card-added');
+      } else if (this.cards.length == 2) {
+        this.$emit(EventBusEvent.FILTER_BREAKPOINT, true);
       }
 
       setTimeout(() => {
@@ -58,15 +59,13 @@ export default {
       }, 300);
     },
 
-    onPropertyChange(id, event) {
-      const { name, value } = event;
-      this.cards.find(card => card.id == id)[name] = value;
-    },
-
     deleteCard(id) {
       this.cards.splice(this.cards.indexOf(id), 1);
+
       if (this.cards.length === 0) {
         this.$emit('last-card-deleted');
+      } else if (this.cards.length === 1) {
+        this.$emit(EventBusEvent.FILTER_BREAKPOINT, false);
       }
     },
 
@@ -76,6 +75,11 @@ export default {
 
     scrollDown() {
       window.scrollBy(0, document.querySelector("#app").clientHeight);
+    },
+
+    onPropertyChange(id, event) {
+      const { name, value } = event;
+      this.cards.find(card => card.id == id)[name] = value;
     },
   },
 }
