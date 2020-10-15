@@ -11,3 +11,15 @@
   display: flex;
   justify-content: center;
 }
+
+@mixin visible() {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: initial;
+}
+
+@mixin hidden() {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}

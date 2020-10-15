@@ -19,17 +19,28 @@ button {
 
 .button {
   &--circle {
-    width: $circle-button-height;
-    height: $circle-button-height;
+    width: $circle-button-size;
+    height: $circle-button-size;
     border-radius: 100%;
     
     @include shadow();
+  }
+  
+  &--close {
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    width: $close-button-height;
+    height: $close-button-height;
+
+    @include hidden();
   }
 
   &--color-primary {
     background-color: hsl(210, 29%, 24%);
     color: hsl(0, 0%, 95%);
   }
+  
 }
 
 .whitespace-no-wrap {
@@ -44,14 +55,11 @@ input::-webkit-inner-spin-button {
 }
 
 .visible {
-  opacity: 1;
-  pointer-events: initial;
+  @include visible();
 }
 
 .hidden {
-  opacity: 0;
-  transform: scale(0.5);
-  pointer-events: none;
+  @include hidden();
 }
 
 @media screen and (max-width: 786px) {
@@ -61,8 +69,8 @@ input::-webkit-inner-spin-button {
   
   .button {
     &--circle {
-      width: $circle-button-height--small;
-      height: $circle-button-height--small;
+      width: $circle-button-size--small;
+      height: $circle-button-size--small;
     }
   } 
 }

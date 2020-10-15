@@ -26,19 +26,10 @@
   
   @include shadow();
 
-  .button--close {
-    position: absolute;
-    top: 0px;
-    right: 8px;
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
   &:hover{
     .button--close {
       top: 8px;
-      opacity: 1;
-      transform: scale(1);  
+      @include visible();
     }
   }
 }
@@ -103,8 +94,7 @@ section {
   .card {
     .button--close {
       top: 8px;
-      opacity: 1;
-      transform: scale(1);  
+      @include visible();
     }
   }
 }
