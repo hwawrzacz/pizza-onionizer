@@ -1,8 +1,8 @@
-<template src="./EditableLabel.html" />
+<template src="./LabelEditable.html" />
 
 <script>
 export default {
-  name: "EditableLabel",
+  name: "LabelEditable",
   props: {
     value: String,
     placeholder: String,
@@ -40,4 +40,4 @@ export default {
 };
 </script>
 
-<style scoped  lang="scss" src="./EditableLabel.scss" />
+<style scoped  lang="scss" src="./LabelEditable.scss" />

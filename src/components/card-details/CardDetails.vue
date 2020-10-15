@@ -1,15 +1,15 @@
 <template src="./CardDetails.html"/>
 
 <script scoped>
-import EditableLabel from "../label-editable/EditableLabel.vue";
+import LabelEditable from "../label-editable/LabelEditable.vue";
 export default {
   name: "CardDetails",
   props: {
     idCard: Number
   },
-  
+
   components: {
-    EditableLabel,
+    LabelEditable,
   },
 
   data: function () {
