@@ -29,6 +29,10 @@ export default {
     emitAddNewCard() {
       EventBus.$emit('add-card');
     },
+
+    emitSort() {
+      EventBus.$emit('sort');
+    }
   }
 }
 </script>

@@ -28,10 +28,15 @@ export default {
         this.addNewCard();
       }
     });
-
+    
     EventBus.$on('add-card', () => {
       this.addNewCard();
     });
+
+    EventBus.$on('sort', () => {
+      this.sort();
+    });
+
   },
 
   methods: {
@@ -66,7 +71,7 @@ export default {
     },
 
     sort() {
-      this.cards = this.cards.sort((c1, c2) => Number(c1.ratio) - Number(c2.ratio));
+      this.cards = this.cards.sort((c1, c2) => Number(c2.ratio) || 0 - Number(c1.ratio) || 0);
     },
 
     scrollDown() {
