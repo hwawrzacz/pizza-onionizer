@@ -3,13 +3,14 @@
         <i class="material-icons">close</i>
     </button>
     <section>
-        <LabelEditable :type="'text'" :placeholder="'e.g. Margherita'" :value="label" @valueChange="setLabel" />
+        <LabelEditable :value="label" :placeholder="'e.g. Margherita'" @valueChange="emitLabelChange" />
     </section>
     <section class="fx-row fx-h-between fx-v-center">
         <div class="input-wrapper fx-col fx-v-start">
             <label for="price">Price</label>
             <div class="fx-row fx-v-center">
-                <input name="price" type="number" placeholder="e.g. 15" v-model="price" @valueChange="setPrice" />
+                <input name="price" type="number" placeholder="e.g. 15" v-model="localPrice"
+                    @change="emitRatioChange" />
                 <i class="material-icons">monetization_on</i>
             </div>
         </div>
@@ -17,8 +18,8 @@
         <div class="input-wrapper fx-col fx-v-start">
             <label for="diameter">Diameter</label>
             <div class="fx-row fx-v-center">
-                <input name="diameter" type="number" placeholder="e.g. 32" v-model="diameter"
-                    @valueChange="setDiameter" />
+                <input name="diameter" type="number" placeholder="e.g. 32" v-model="localDiameter"
+                    @change="emitRatioChange" />
                 <span>cm</span>
             </div>
         </div>

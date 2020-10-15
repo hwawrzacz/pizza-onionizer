@@ -1,5 +1,5 @@
 <section class="fx-row fx-wrap fx-h-center">
   <pizza-card v-for="card in cards" :key="card.id" :idCard="card.id" :label="card.label" :diameter="card.diameter"
-    :price="card.price" @deleteCard="deleteCard">
+    :price="card.price" @deleteCard="deleteCard" @propertyChange="onPropertyChange(card.id, $event)">
   </pizza-card>
 </section>

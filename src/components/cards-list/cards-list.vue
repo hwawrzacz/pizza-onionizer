@@ -34,9 +34,8 @@ export default {
       const newCard = {
         id: this.id++,
         label: "",
-        price: null,
-        diameter: null,
-      }
+        ratio: null
+      };           
 
       this.cards.push(newCard);
 
@@ -47,6 +46,11 @@ export default {
       setTimeout(() => {
         this.scrollDown();
       }, 300);
+    },
+
+    onPropertyChange(id, event) {
+      const { name, value } = event;
+      this.cards.find(card => card.id == id)[name] = value;
     },
 
     deleteCard(id) {

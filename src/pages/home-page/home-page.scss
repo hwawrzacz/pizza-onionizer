@@ -33,7 +33,7 @@ section {
   cursor: pointer;
   font-size: 1.1em;
   transform: translateX(-50%);
-  transition: 300ms;
+  transition: $transition-medium;
   
   @include shadow();
 

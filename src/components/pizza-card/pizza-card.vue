@@ -19,20 +19,22 @@ export default {
   data () {
     return {
       close: false,
+      localPrice: this.price,
+      localDiameter: this.diameter,
     };
   },
 
   methods: {
-    setLabel(value) {
-      this.label = value;
+    emitLabelChange(value) {
+      this.emitPropChange('label', value);
     },
 
-    setPrice(value) {
-      this.price = value;
+    emitRatioChange() {
+      this.emitPropChange('ratio', this.ratio);
     },
 
-    setDiameter(value) {
-      this.diameter = value;
+    emitPropChange(propName, propValue) {
+      this.$emit('propertyChange', {name: propName, value: propValue});
     },
     
     onDeleteCard() {
@@ -47,7 +49,7 @@ export default {
 
   computed: {
     ratio() {
-      const ratio = (Math.PI * Math.pow(this.diameter / 2, 2)) / this.price;
+      const ratio = (Math.PI * Math.pow(this.localDiameter / 2, 2)) / this.localPrice;
       return ratio ? ratio.toFixed(2) : "---";
     }
   }
