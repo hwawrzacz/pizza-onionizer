@@ -2,6 +2,7 @@
 
 <script>
 import PizzaCard from "../pizza-card/pizza-card.vue";
+import { EventBus } from "../../mixins/EventBus.js";
 
 export default {
   name: "CardsList",
@@ -26,6 +27,10 @@ export default {
       if (e.keyCode === 73 && e.ctrlKey && !e.shiftKey) {
         this.addNewCard();
       }
+    });
+
+    EventBus.$on('add-card', () => {
+      this.addNewCard();
     });
   },
 
@@ -60,16 +65,14 @@ export default {
       }
     },
 
+    sort() {
+      this.cards = this.cards.sort((c1, c2) => Number(c1.ratio) - Number(c2.ratio));
+    },
+
     scrollDown() {
       window.scrollBy(0, document.querySelector("#app").clientHeight);
     },
   },
-
-  watch: {
-    'addCard': function () {
-      this.addNewCard();
-    }
-  }
 }
 </script>
 

@@ -1,6 +1,7 @@
 <template src="./home-page.html" />
 <script>
 import CardsList from "../../components/cards-list/cards-list.vue";
+import { EventBus } from "../../mixins/EventBus.js";
 
 export default {
   name: "HomePage",
@@ -25,9 +26,9 @@ export default {
       this.isListEmpty = true;
     },
 
-    addNewCard() {
-      this.addCard = new Boolean(true);
-    }
+    emitAddNewCard() {
+      EventBus.$emit('add-card');
+    },
   }
 }
 </script>
