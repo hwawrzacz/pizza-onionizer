@@ -69,14 +69,11 @@ section {
   }
 
   input {
-    box-sizing: border-box;
     display: block;
     width: 100px;
     padding: 8px 6px;
     margin-right: 4px;
 
-    font-size: 1em;
-    border: none;
     text-align: left;
   }
 }
@@ -95,6 +92,22 @@ section {
     .button--close {
       top: 8px;
       @include visible();
+    }
+  }
+
+  .input-wrapper {
+    input {
+      display: block;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .input-wrapper {
+    input {
+      display: block;
+      width: 80px;
     }
   }
 }
