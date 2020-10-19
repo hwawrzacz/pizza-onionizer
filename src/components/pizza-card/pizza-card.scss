@@ -34,10 +34,12 @@
   }
 }
 
+.animation-most-profitable {
+  animation: show-card 300ms forwards, most-profitable 1500ms infinite;
+}
+
 .animation-close-card {
-  animation: close-card;
-  animation-duration: 300ms;
-  animation-fill-mode: forwards;
+  animation: close-card 300ms forwards;
 }
 
 .button--close {
