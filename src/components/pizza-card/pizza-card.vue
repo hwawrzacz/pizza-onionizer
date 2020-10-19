@@ -10,6 +10,7 @@ export default {
     label: String,
     price: Number,
     diameter: Number,
+    mostProfitable: Boolean
   },
 
   components: {

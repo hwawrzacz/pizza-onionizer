@@ -35,6 +35,7 @@ export default {
 
     EventBus.$on(EventBusEvent.SORT_CARDS, () => {
       this.sort();
+      this.refreshMostProfitable();
 
       setTimeout(() => {
         this.scrollTop();
@@ -47,7 +48,8 @@ export default {
       const newCard = {
         id: this.id++,
         label: "",
-        ratio: null
+        ratio: null,
+        mostProfitable: false
       };           
 
       this.cards.push(newCard);
@@ -76,6 +78,24 @@ export default {
 
     sort() {
       this.cards = this.cards.sort((c1, c2) => (Number(c2.ratio) || 0) - (Number(c1.ratio) || 0));
+    },
+
+    refreshMostProfitable() {
+      this.clearMostProfitableFlags();
+      this.markMostProfitable();
+    },
+    
+    clearMostProfitableFlags() {
+      this.cards.forEach(card => card['mostProfitable'] = false);
+    },
+
+    markMostProfitable() {
+      // As cards are already sorted, first card has the greatest value
+      let max = this.cards[0].ratio;
+
+      this.cards.forEach(card => {
+        if (card.ratio == max) card.mostProfitable = true;
+      })
     },
 
     scrollTop() {
