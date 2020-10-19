@@ -45,6 +45,10 @@ export default {
     emitDeleteCard() {
       this.$emit("delete-card", this.idCard);
     },
+
+    scrollToCard() {
+      window.scrollTo(0, this.$el.offsetTop);
+    }
   },
 
   computed: {

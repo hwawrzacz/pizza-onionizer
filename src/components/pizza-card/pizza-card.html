@@ -1,4 +1,4 @@
-<div class="card" :class="{ 'animation-close-card': close }">
+<div class="card" :class="{ 'animation-close-card': close }" @click="scrollToCard">
     <button class="button--close" @click="onDeleteCard">
         <i class="material-icons">close</i>
     </button>
