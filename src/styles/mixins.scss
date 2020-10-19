@@ -1,5 +1,7 @@
+@import '../styles/variables';
+
 @mixin shadow() {
-  box-shadow: 0 4px 10px -4px #666;
+  box-shadow: 0 4px 10px -4px $color--shadow;
 }
 
 @mixin flex-v-center {
